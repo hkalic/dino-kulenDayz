@@ -51,5 +51,12 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
+    if (Dinos.find({}).count()==0) {
+        Dinos.insert({name: "Cobol", votes: 0});
+        Dinos.insert({name: "Visual Basic", votes: 0});
+        Dinos.insert({name: "Clipper", votes: 0});
+        Dinos.insert({name: "ALGOL 68", votes: 0});
+        Dinos.insert({name: "Clarion", votes: 0});
+    }
   });
 }
